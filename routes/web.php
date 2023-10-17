@@ -41,7 +41,7 @@ Route::get('delete/{id}',[CarController::class,'delete'])->name('delete');
 Route::get('cars.show', [CarController::class, 'show'])->name('cars');
 /*
 |--------------------------------------------------------------------------
-| Products Routes
+| Cars Routes
 |--------------------------------------------------------------------------
 */
 Route::resource('cars', 'CarController');
@@ -57,3 +57,10 @@ Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.
 Route::patch('update-cart', [CartController::class, 'update'])->name('update.cart');
 Route::post('remove-from-cart/{id}', [CartController::class, 'remove'])->name('remove.from.cart');
 Route::post('removeAll', [CartController::class, 'removeAll'])->name('clearCart');
+
+/*
+|--------------------------------------------------------------------------
+| Default Route
+|--------------------------------------------------------------------------
+*/
+Route::get('/', [CarController::class, 'index'])->name('cars');
